@@ -1,0 +1,123 @@
+.Aboutus {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    padding: 0px 80px;
+    overflow: hidden;
+  }
+  .about-1 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.7fr 1fr;
+  }
+  .about-1-img {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+  }
+  .about-round-text {
+    width: 100%;
+    height: 100%;
+  }
+  .about-pic-1 {
+    width: 415px;
+    height: 328px;
+  }
+  .aboutpic1 {
+    width: 415px;
+    height: 328px;
+  }
+  
+  .about-text {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .about-heading {
+    font-family: 'Noto Serif', serif;
+    font-size: 80px;
+    font-weight: 600;
+    color: #3d3d3d;
+  }
+  .about-text-content {
+    width: 626px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #3d3d3d;
+  }
+  .about-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .aboutpic2 {
+    width: 415px;
+    height: 508px;
+  }
+  
+  /* circle */
+  .circle1 {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 1px solid #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoo1 {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border: 1px solid #3d3d3d;
+    border-radius: 50%;
+  }
+  .text1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotatetext 10s linear infinite;
+  }
+  @keyframes rotatetext {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .text1 span {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    font-size: 12px;
+    transform-origin: 0 50px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3d3d3d;
+  }
+  .circle-container1 {
+      width: 100%;
+      height: 100%;
+      padding-top: 100px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  

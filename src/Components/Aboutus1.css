@@ -1,0 +1,68 @@
+.Aboutus1 {
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.6fr 1fr;
+  padding: 0px 80px;
+}
+.aboutus-container-1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.nationalicon {
+  width: 242.34px;
+  height: 46.77px;
+}
+.appoloicon {
+  width: 238px;
+  height: 91px;
+}
+.Danfoss {
+  width: 220.13px;
+  height: 85.38px;
+}
+.oerlikon {
+  width: 245px;
+  height: 53px;
+}
+.aboutus-container-2{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 415px;
+}
+.ourclients-text{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.ourclients-heading{
+  font-family: 'Noto Serif', serif;
+    font-size: 80px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+.ourclients-text-content{
+    width: 626px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #B3B3B3;
+}
+.ourclients-img-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+

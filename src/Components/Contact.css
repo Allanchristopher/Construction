@@ -1,0 +1,73 @@
+.Contactus {
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.6fr 1fr;
+  padding: 50px 80px 0px 80px;
+}
+.Contactus-heading {
+  font-family: 'Noto Serif', serif;
+  font-size: 80px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+}
+.contactus-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.map {
+}
+.leaf-let-map {
+  width: 511px;
+  height: 100%;
+  z-index: 0;
+}
+.mail-container {
+  width: 565px;
+  height: 359px;
+}
+.Contact-inputs{
+    width: 565px;
+    height: 359px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.text-input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 20px;
+    color: #828282;
+    font-family: "Roboto", sans-serif;
+}
+.input-textarea{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 20px;
+    gap: 10px;
+    width: 100%;
+    height: 149px;
+    border: 1px solid #e0e0e0;
+    color: #828282;
+    font-family: "Roboto", sans-serif;
+}
+.Send-btn{
+    width: 100%;
+    height: 50px;
+    background: #840000;
+    border: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,99 @@
+.Footer {
+  background-color: #f5f1ee;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 0.3fr;
+  padding: 50px 80px;
+}
+.Footer-top {
+
+  display: flex;
+  justify-content: space-between;
+}
+.Footer-logo {
+    text-align: left;
+    align-items: flex-start;
+}
+.footerlogo {
+  width: 107.9988784790039px;
+  height: 130.13165283203125px;
+}
+.footerlogo-text {
+  width: 373px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #666666;
+
+}
+.Footer-navbar{
+width: 250px;
+}
+.footer-navbar-heading{
+font-family: "Montserrat", sans-serif;
+font-size: 22px;
+font-weight: 600;
+line-height: 33px;
+letter-spacing: 0em;
+text-align: left;
+color: #3D3D3D;
+}
+.footer-navbar{
+font-family: "Montserrat", sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color: #666666;
+}
+.Footer-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.Address-container{
+
+}
+.address-heading{
+    font-family: "Montserrat", sans-serif;
+font-size: 22px;
+font-weight: 600;
+line-height: 33px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.address{
+    width: 327px;
+    font-family: "Montserrat", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+color:  #666666;
+}
+.Contact-container{
+    width: 250px;
+}
+.contact-heading{
+    font-family: "Montserrat", sans-serif;
+font-size: 22px;
+font-weight: 600;
+letter-spacing: 0em;
+text-align: left;
+}
+.Contact{
+    width: 327px;
+    font-family: "Montserrat", sans-serif;
+font-size: 16px;
+font-weight: 400;
+letter-spacing: 0em;
+text-align: left;
+color:  #666666;
+}

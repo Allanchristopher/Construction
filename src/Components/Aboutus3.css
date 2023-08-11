@@ -1,0 +1,55 @@
+.Aboutus3 {
+  background-color: #f5f1ee;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 0.6fr;
+  padding: 0px 80px;
+}
+.aboutus3-piccontainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 150px;
+}
+.aboutpic4 {
+  width: 332px;
+  height: 340px;
+}
+.aboutpic4-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.aboutus3-text-heading{
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3d3d3d;
+}
+.aboutus3-text{
+    font-family: "Montserrat", sans-serif;
+    width: 626px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.aboutpic4-heading{
+  font-family: 'Noto Serif', serif;
+font-size: 80px;
+font-weight: 600;
+line-height: 80px;
+letter-spacing: 0em;
+text-align: left;
+color: #3D3D3D;
+
+
+}
