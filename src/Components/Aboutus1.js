@@ -9,10 +9,10 @@ function Aboutus1() {
   return (
     <div className="Aboutus1">
       <div className="aboutus-container-1">
-        <img className="nationalicon" src={nationalicon} alt="icon" />
-        <img className="appoloicon" src={appoloicon} alt="icon" />
-        <img className="Danfoss" src={Danfoss} alt="icon" />
-        <img className="oerlikon" src={oerlikon} alt="icon" />
+        <img className="nationalicon icon" src={nationalicon} alt="icon" />
+        <img className="appoloicon icon" src={appoloicon} alt="icon" />
+        <img className="Danfoss icon" src={Danfoss} alt="icon" />
+        <img className="oerlikon icon" src={oerlikon} alt="icon" />
       </div>
       <div className="aboutus-container-2">
         <div className="ourclients-text">

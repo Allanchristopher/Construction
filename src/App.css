@@ -18,7 +18,18 @@ overflow: hidden;
   /* Set up your app styles here */
   cursor: none;
 }
-
+.noise::before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: .05;
+  z-index: 2000;
+  pointer-events: none;
+  background-image: url(./Assets/noise.gif);
+}
 .horizontalscrolling {
   display: flex;
   overflow-x: hidden; /* Hide horizontal scroll bar */

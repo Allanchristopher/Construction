@@ -13,6 +13,13 @@
   align-items: center;
   justify-content: space-evenly;
 }
+.icon {
+  transition: transform 0.3s ease; /* Add a smooth transition to the transform property */
+}
+
+.icon:hover {
+  transform: translateY(-15px) scale(1.05); /* Apply the pop-up effect on hover */
+}
 .nationalicon {
   width: 242.34px;
   height: 46.77px;

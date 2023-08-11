@@ -5,11 +5,10 @@ import { gsap } from "gsap";
 import moduleName from "../Assets/Right.svg";
 import Hoverimg from "../Assets/hoverimg.jpg";
 
-function Home() {
+const Home = () => {
   const [rotatedText, setRotatedText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const originalText = "SCROLL TO EXPLORE";
@@ -38,8 +37,7 @@ function Home() {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMouseX(e.clientX);
-      setMouseY(e.clientY);
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -49,10 +47,17 @@ function Home() {
     };
   }, []);
 
+  const hoveredImageStyle = {
+ transform: `translate(${mousePosition.x - 83}px, ${mousePosition.y - 50}px) translate(-50%, -50%)`,
+    opacity: isHovered ? 1 : 0,
+    position: "absolute",
+    transition: "transform 0.2s , opacity 0.4s ease", // Adjust the duration and easing as needed
+  };
+
   return (
     <div className="Home">
       <div className="Home-top">
-        <img className="logo" src={logo} alt="logo" />
+        <img className="logo" src={logo} alt="Logo" />
       </div>
       <div className="Home-center">
         <p className="Home-center-AAKAASH">AAKAASH ENGINEERING</p>
@@ -68,7 +73,7 @@ function Home() {
         <div className="first-circle">
           <div className="circle">
             <div className="logoo">
-              <img className="rightarrow" src={moduleName} alt="logo" />
+              <img className="rightarrow" src={moduleName} alt="Logo" />
             </div>
             <div className="text">
               <p>{rotatedText}</p>
@@ -76,19 +81,11 @@ function Home() {
           </div>
         </div>
       </div>
-      <div
-        className="hovered-image"
-        style={{
-          left: mouseX - 144 + "px",
-          top: mouseY - 113 + "px",
-          opacity: isHovered ? 1 : 0,
-          position: "absolute",
-        }}
-      >
-        <img className="hover-img" src={Hoverimg} alt="Hovered Image" />
+      <div className="hovered-image" style={hoveredImageStyle}>
+        <img className="hover-img" src={Hoverimg} alt="Illustration" />
       </div>
     </div>
   );
-}
+};
 
 export default Home;

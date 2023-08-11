@@ -17,20 +17,20 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <><div
-    className="custom-cursor"
-    style={{
-      transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
-    }}
-  ></div>
-  <div
-      className="dot-cursor"
-      style={{
-        transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
-      }}
-    ></div>
-  </>
-    
+    <>
+      <div
+        className="cursor cursor-border"
+        style={{
+          transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
+        }}
+      />
+      <div
+        className="cursor cursor-dot"
+        style={{
+          transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
+        }}
+      />
+    </>
   );
 };
 

@@ -57,7 +57,7 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="App noise" >
       <div className="horizontalscrolling" ref={containerRef}>
         <div className="home-section" ref={el => (sectionsRef.current[0] = el)}>
           <Home />
@@ -81,6 +81,7 @@ function App() {
           <Footer />
         </div>
       </div>
+    
       <Courser/>
     </div>
   );
