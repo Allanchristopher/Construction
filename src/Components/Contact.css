@@ -1,13 +1,14 @@
 .Contactus {
-  background-color: #000000;
+  background-color: transparent;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 0.6fr 1fr;
   padding: 50px 80px 0px 80px;
+  overflow-x: hidden;
 }
 .Contactus-heading {
-  font-family: 'Noto Serif', serif;
+  font-family: 'Noto Serif Display', serif;
   font-size: 80px;
   font-weight: 600;
   color: #ffffff;
@@ -18,8 +19,7 @@
   display: flex;
   justify-content: space-between;
 }
-.map {
-}
+
 .leaf-let-map {
   width: 511px;
   height: 100%;
@@ -27,47 +27,178 @@
 }
 .mail-container {
   width: 565px;
-  height: 359px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.Contact-inputs{
-    width: 565px;
+.Contact-inputs {
+  width: 565px;
+  height: 359px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.text-input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 20px;
+  color: #828282;
+  font-family: "Roboto", sans-serif;
+}
+.input-textarea {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px 20px;
+  gap: 10px;
+  width: 100%;
+  height: 149px;
+  border: 1px solid #e0e0e0;
+  color: #828282;
+  font-family: "Roboto", sans-serif;
+}
+.Send-btn {
+  width: 100%;
+  height: 50px;
+  background: #840000;
+  border: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (min-width: 1400px) {
+  .leaf-let-map {
+    width: 600px;
+  }
+}
+@media (min-width: 1600px) {
+  .leaf-let-map {
+    width: 800px;
+  }
+}
+@media (max-width: 1300px) {
+  .contactus-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+@media (max-width: 1265px) {
+  .contactus-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .Contact-inputs {
+    width: 500px;
     height: 359px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+  }
+  .leaf-let-map {
+    width: 450px;
+  }
 }
-.text-input{
+@media (max-width: 1140px) {
+  .contactus-container {
     width: 100%;
-    height: 50px;
-    border: 1px solid #e0e0e0;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+  }
+  .Contact-inputs {
+    width: 430px;
+    height: 359px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .leaf-let-map {
+    width: 400px;
+  }
+}
+@media (max-width: 1000px) {
+  /* .Contactus {
+overflow-y: scroll;
+  } */
+  .Contactus {
+    padding: 50px 40px 0px 40px;
+  }
+  .contactus-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    padding: 12px 20px;
-    color: #828282;
-    font-family: "Roboto", sans-serif;
-}
-.input-textarea{
+  }
+  .mail-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 12px 20px;
-    gap: 10px;
-    width: 100%;
-    height: 149px;
-    border: 1px solid #e0e0e0;
-    color: #828282;
-    font-family: "Roboto", sans-serif;
-}
-.Send-btn{
-    width: 100%;
-    height: 50px;
-    background: #840000;
-    border: none;
-    font-family: "Poppins";
-    font-style: normal;
+    align-items: center;
+    justify-content: center;
+  }
+  .leaf-let-map {
+    width: 430px;
+    height: 350px;
+  }
+  .Contactus-heading {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 80px;
     font-weight: 600;
-    font-size: 14px;
     color: #ffffff;
-    cursor: pointer;
+    text-align: right;
+  }
 }
+@media (max-width: 725px) {
+  .mail-container {
+    width: 500px;
+  }
+}
+@media (max-width: 700px) {
+  .Contactus-heading {
+    font-size: 60px;
+  }
+}
+@media (max-width: 660px) {
+  .mail-container {
+    width: 100%;
+  }
+  .Contact-inputs {
+    width: 100%;
+  }
+  .map {
+    width: 100%;
+    height: 350px;
+  }
+  .leaf-let-map {
+    width: 100%;
+    height: 350px;
+  }
+}
+@media (max-width: 550px) {
+  .Contactus-heading {
+    font-size: 50px;
+  }
+}
+
+
+@media(max-width:460px){
+  .Contactus-heading {
+    font-size: 45px;
+  }
+}
+@media(max-width:430px){
+  .Contactus-heading {
+    font-size: 36px;
+  }
+}
+

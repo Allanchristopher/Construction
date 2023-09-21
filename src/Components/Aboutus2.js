@@ -2,10 +2,12 @@ import React from "react";
 import "./Aboutus2.css";
 import aboutpic3 from "../Assets/aboutpic-3.svg";
 function Aboutus2() {
+  
   return (
     <div className="Aboutus2">
       <div className="aboutus2-container-1">
         <p className="year">2006</p>
+        <p className="year">2007</p>
       </div>
       <div className="aboutus2-container-2">
         <div className="aboutus2-textcontainer">

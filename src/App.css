@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 *{
@@ -14,10 +14,13 @@ text-align: center;
 overflow: hidden;
 } */
 /* App.css */
-.App {
+.container {
   /* Set up your app styles here */
   cursor: none;
+  background-color: #FFFFFF;
+  transition: all 0.5s ease;
 }
+
 .noise::before{
   position: fixed;
   top: 0;
@@ -30,18 +33,32 @@ overflow: hidden;
   pointer-events: none;
   background-image: url(./Assets/noise.gif);
 }
-.horizontalscrolling {
+/* .horizontalscrolling {
   display: flex;
   overflow-x: hidden; /* Hide horizontal scroll bar */
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  /* scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; */
 
+/* } */ 
+
+
+
+
+/* .horizontalscrolling {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
+.scroll-section {
+  min-width: 100vw;
+  min-height: 100vh;
+  scroll-snap-align: start;
+} */
 /* Apply styles for each section/component inside the container */
 /* For example, you can set the width of each section to fit the viewport */
 /* Adjust the styles as needed */
-.home-section,
+/* .home-section,
 .aboutus-section,
 .aboutus1-section,
 .aboutus2-section,
@@ -51,4 +68,49 @@ overflow: hidden;
   flex: 0 0 100vw;
   height: 100vh;
   scroll-snap-align: start;
+} */
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+body {
+  overflow-y: visible;
+  position: relative;
+  overflow-x: hidden;
+}
+html,
+body {
+  margin: 0;
+}
+
+.container {
+  width: 700vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .firstContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: yellow;
+} */
+
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: yellow;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+}
+.purple{
+  position: relative;
 }

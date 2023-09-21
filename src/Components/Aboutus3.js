@@ -7,20 +7,24 @@ function Aboutus3() {
       <div className="aboutus3-piccontainer">
         <img className="aboutpic4" src={aboutpic4} alt="img" />
 
+      
+      </div>
+      <div className="aboutus-2-container">
+        <p className="aboutpic4-heading">
+          Supporting
+          <br />
+          Jobs
+        </p>
         <div className="aboutpic4-text">
           <p className="aboutus3-text-heading">Safety Stickers</p>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <p className="aboutus3-text">
             We started our journey in 2008, and we have come a long way from
             there. Here’s a glimpse of our many firsts, our biggest milestone,
             and our celebrations through the year.
           </p>
         </div>
-      </div>
-      <div>
-        <p className="aboutpic4-heading">Supporting<br/>
-Jobs</p>
       </div>
     </div>
   );

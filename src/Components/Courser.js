@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Courser.css";
-
+import userContext from "../Datacontexter";
 const CustomCursor = () => {
+  const contexter = useContext(userContext);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -19,13 +20,15 @@ const CustomCursor = () => {
   return (
     <>
       <div
-        className="cursor cursor-border"
+        className={
+          contexter.isHovered ? "cursor  cursor-border corseractive" : "cursor cursor-border"
+        }
         style={{
           transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
         }}
-      />
+      >{contexter.isHoveredDrag ? "Drag" : null}</div>
       <div
-        className="cursor cursor-dot"
+        className={contexter.isHovered ? "" : "cursor cursor-dot"}
         style={{
           transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
         }}

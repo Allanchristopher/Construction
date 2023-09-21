@@ -1,30 +1,34 @@
 .Aboutus3 {
-  background-color: #f5f1ee;
+  background-color: transparent;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 0.6fr;
   padding: 0px 80px;
+  overflow: hidden;
 }
 .aboutus3-piccontainer {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: flex;
-  gap: 150px;
 }
 .aboutpic4 {
+  position: absolute;
   width: 332px;
   height: 340px;
 }
-.aboutpic4-text{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+.aboutpic4-text {
+position: relative;
+width: 600px;
 }
-.aboutus3-text-heading{
+.aboutpic4-heading-container{
+  position: relative;
+  width: 450px;
+}
+.aboutpic4-text-container{
+  position: absolute;
+}
+.aboutus3-text-heading {
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 600;
@@ -33,23 +37,84 @@
   text-align: left;
   color: #3d3d3d;
 }
-.aboutus3-text{
-    font-family: "Montserrat", sans-serif;
-    width: 626px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
+.aboutus3-text {
+  font-family: "Montserrat", sans-serif;
+  max-width: 626px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
-.aboutpic4-heading{
-  font-family: 'Noto Serif', serif;
-font-size: 80px;
-font-weight: 600;
-line-height: 80px;
-letter-spacing: 0em;
-text-align: left;
-color: #3D3D3D;
-
-
+.aboutpic4-heading {
+  position: absolute;
+  font-family: "Noto Serif Display", serif;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 80px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3d3d3d;
+}
+.aboutus-2-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  gap: 150px;
+}
+@media (min-width: 1537px) {
+  .aboutpic4 {
+    width: 50%;
+    height: 80%;
+  }
+}
+@media (max-width: 1000px) {
+  .Aboutus3 {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+    padding: 50px 80px 50px 0px;
+  }
+  .aboutpic4-heading {
+    padding: 0px 80px;
+  }
+  .aboutus3-piccontainer {
+    gap: 50px;
+  }
+  .aboutpic4 {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (max-width: 700px) {
+  .aboutpic4-heading {
+    font-size: 60px;
+  }
+}
+@media (max-width: 550px) {
+  .aboutpic4-heading {
+    font-size: 50px;
+  }
+  .aboutpic4 {
+    width: 250px;
+  }
+}
+@media (max-width: 460px) {
+  .aboutpic4-heading {
+    font-size: 45px;
+  }
+  .aboutpic4 {
+    width: 210px;
+  }
+}
+@media (max-width: 430px) {
+  .aboutpic4-heading {
+    font-size: 36px;
+  }
+  .aboutpic4 {
+    width: 180px;
+  }
+  .aboutus3-text {
+    font-size: 14px;
+  }
 }

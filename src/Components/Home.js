@@ -1,13 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Home.css";
 import logo from "../Assets/logo.svg";
 import { gsap } from "gsap";
 import moduleName from "../Assets/Right.svg";
 import Hoverimg from "../Assets/hoverimg.jpg";
-
+import aboutpic1 from "../Assets/aboutpic-1.svg";
+import userContext from "../Datacontexter";
 const Home = () => {
-  const [rotatedText, setRotatedText] = useState("");
-  const [isHovered, setIsHovered] = useState(false);
+  const contexter = useContext(userContext);
+  const [rotatedText, setRotatedText] = useState(Hoverimg);
+  const [image, setImage] = useState();
+  const [imageno, setImageno] = useState();
+  useEffect(() => {
+    if (imageno === "1") {
+      setImage(Hoverimg);
+    } else if (imageno === "2") {
+      setImage(aboutpic1);
+    }
+  }, [imageno]);
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -21,19 +32,19 @@ const Home = () => {
     );
   }, []);
 
-  useEffect(() => {
-    gsap.to(".circle-container", {
-      x: 100,
-      scale: 0,
-      opacity: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".circle-container",
-        start: "top 50%",
-        scrub: 2,
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.to(".circle-container", {
+  //     x: 100,
+  //     scale: 0,
+  //     opacity: 0,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".circle-container",
+  //       start: "top 50%",
+  //       scrub: 2,
+  //     },
+  //   });
+  // }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -48,10 +59,16 @@ const Home = () => {
   }, []);
 
   const hoveredImageStyle = {
- transform: `translate(${mousePosition.x - 83}px, ${mousePosition.y - 50}px) translate(-50%, -50%)`,
-    opacity: isHovered ? 1 : 0,
+    transform: `translate(${mousePosition.x - 83}px, ${
+      mousePosition.y - 50
+    }px) translate(-50%, -50%)`,
+    opacity: contexter.isHovered ? 1 : 0,
+    visibility: contexter.isHovered ? "visible" : "hidden",
+    width: contexter.isHovered ? "281px" : "281px", // Change this to the desired width
+    height: contexter.isHovered ? "222px" : "222px", // Change this to the desired height
     position: "absolute",
-    transition: "transform 0.2s , opacity 0.4s ease", // Adjust the duration and easing as needed
+    transition: "all 0.18s linear, all 0.2s linear",
+    zindex: -1,
   };
 
   return (
@@ -61,12 +78,26 @@ const Home = () => {
       </div>
       <div className="Home-center">
         <p className="Home-center-AAKAASH">AAKAASH ENGINEERING</p>
-        <p
-          className="Home-center-BIG"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          Where Performance Speaks
+        <p className="Home-center-BIG">
+          <span
+            onMouseEnter={() => {
+              contexter.setIsHovered(true);
+              setImageno("1");
+            }}
+            onMouseLeave={() => contexter.setIsHovered(false)}
+          >
+            Where{" "}
+          </span>
+          <span
+            onMouseEnter={() => {
+              contexter.setIsHovered(true);
+              setImageno("2");
+            }}
+            onMouseLeave={() => contexter.setIsHovered(false)}
+          >
+            Performance{" "}
+          </span>
+          Speaks
         </p>
       </div>
       <div className="circle-container">
@@ -82,7 +113,7 @@ const Home = () => {
         </div>
       </div>
       <div className="hovered-image" style={hoveredImageStyle}>
-        <img className="hover-img" src={Hoverimg} alt="Illustration" />
+        <img className="hover-img" src={image} alt="Illustration" />
       </div>
     </div>
   );

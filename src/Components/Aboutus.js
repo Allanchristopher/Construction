@@ -37,13 +37,21 @@ function Aboutus() {
         </div>
         <div className="about-text">
           <p className="about-heading">
-            ABOUT <br />
-            US
+            <span>A</span>
+            <span>b</span>
+            <span>o</span>
+            <span>u</span>
+            <span>t</span> <br />
+            Us
           </p>
           <p className="about-text-content">
             We started our journey in 2008, and we have come a long way from
             there. Here’s a glimpse of our many firsts, our biggest milestone,
-            and our celebrations through the year.
+            and our celebrations through the year of industrial solutions-about
+            all kind of segments from hr, production,-safety, pantry in-house,
+            logistic, testing labs,stp/etp, utilities, landscape, roofing and
+            flooring supply AND services,fire hydrant, Windows
+            and glazing works etc.
           </p>
         </div>
       </div>
