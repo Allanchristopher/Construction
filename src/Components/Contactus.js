@@ -1,14 +1,16 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import "./Contact.css";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import markerIcon from "../Assets/locationmarker.svg";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
+import emailjs from "@emailjs/browser";
+import { message } from "antd";
 function Contactus() {
+  const form = useRef();
     const locations = [
-        { position: [8.72479, 77.74452], name: "Thirunelveli" },
-        { position: [8.95729, 77.29232], name: "Thenkasi" },
+        { position: [12.841519, 79.907461], name: "Chennai" }
       ];
       const bounds = L.latLngBounds(locations.map((location) => location.position));
       const customIcon = L.icon({
@@ -20,6 +22,39 @@ function Contactus() {
         shadowSize: [41, 41],
         shadowAnchor: [12, 41],
       });
+      const [messageApi, contextHolder] = message.useMessage();
+      const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs
+          .sendForm(
+            "service_hs7tb69",
+            "template_52nypfa",
+            form.current,
+            "MxDFTViY7UvoGCmS3"
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              messageApi.open({
+                type: "success",
+                content: "Message send",
+                style: {
+                  marginTop: "10vh",
+                },
+              });
+            },
+            (error) => {
+              console.log(error.text);
+              messageApi.open({
+                type: "error",
+                content: "Message not send please sent again",
+                style: {
+                  marginTop: "20vh",
+                },
+              });
+            }
+          );
+      };
   return (
     <div className='Contactus'>
       <div className='contactus-heading-container'>
@@ -40,10 +75,11 @@ Us </p>
       ))}
     </MapContainer>
         </div>
+        {contextHolder}
         <div className='mail-container'>
         <form className="Contact-inputs"
-        //   ref={form}
-        //   onSubmit={sendEmail}
+          ref={form}
+          onSubmit={sendEmail}  
           >
             <input
               className="text-input"

@@ -156,6 +156,7 @@ overflow-y: scroll;
     font-weight: 600;
     color: #ffffff;
     text-align: right;
+    mix-blend-mode:color-burn;
   }
 }
 @media (max-width: 725px) {

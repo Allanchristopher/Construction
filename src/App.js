@@ -7,7 +7,14 @@ import Home from "./Components/Home";
 import Courser from "./Components/Courser";
 import Aboutus from "./Components/Aboutus";
 import Aboutus1 from "./Components/Aboutus1";
-import aboutpic3 from "./Assets/aboutpic-3.svg";
+import scrollapploimg from "./Assets/scroll-applo-img.jpg";
+import Danfossscrollimg from "./Assets/Danfoss-scroll-img.jpg";
+import oerlikonscrollimg from "./Assets/oerlikon-scroll-img.jpg";
+import seoyonscrollimg from "./Assets/seoyon-scroll-img.jpg";
+import appoloicon from "./Assets/applo-icon.svg";
+import oerlikon from "./Assets/oerlikon-icon.svg";
+import Danfoss from "./Assets/Danfoss-icon.svg";
+import seyon from "./Assets/seyon-icon.svg";
 import aboutpic4 from "./Assets/aboutpic-4.svg";
 import footerlogo from "./Assets/footerlogo.svg";
 import "./Components/Aboutus2.css";
@@ -61,7 +68,6 @@ const App = () => {
     sections.forEach((section, index) => {
       if (section.dataset.pin) stops.push(index);
     });
-    console.log(stops);
 
     const tl = gsap.timeline({
       defaults: {
@@ -71,7 +77,7 @@ const App = () => {
         trigger: ".container",
         pin: true,
         scrub: 2,
-        end: "+=25000",
+        end: "+=16000",
       },
     });
     stops.forEach((stop, index) => {
@@ -122,98 +128,12 @@ const App = () => {
           { opacity: 1, y: 0, ease: "power2.out" },
           0.5
         )
-        .staggerTo(
-          q(".title-fade-in-4"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-5"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-5"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-6"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-6"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-7"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-7"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-8"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-8"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-9"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-9"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-10"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerTo(
-          q(".title-fade-in-10"),
-          0.5,
-          { opacity: 0, y: 0, ease: "power2.out" },
-          0.5
-        )
-        .staggerFromTo(
-          q(".title-fade-in-11"),
-          0.5,
-          { opacity: 0, y: 0 },
-          { opacity: 1, y: 0, ease: "power2.out" },
-          0.2
-        );
-
+        // .staggerTo(
+        //   q(".title-fade-in-4"),
+        //   0.5,
+        //   { opacity: 0, y: 0, ease: "power2.out" },
+        //   0.5
+        // );
       if (index === stops.length - 1) {
         tl.to(sections, {
           xPercent: -(100 * (sections.length - 1)),
@@ -243,118 +163,16 @@ const App = () => {
         </section>
         <section className="panel purple" data-pin="true">
           <div className="Aboutus2 title-fade-in-1">
-            <div className="aboutus2-container-1   ">
-              <p className="year ">2006 -2007</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer ">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Durr India</p>
-                  <p className="smallheading">2006 -2007(40 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">Painting and Structural</p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                {" "}
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-2">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade-in">2007</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">National Plastics</p>
-                  <p className="smallheading">2007(70 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Trolyes, Mezzanine floor, EOT Cranes, Structural and
-                    Moveable main gate
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-3">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade-in">2007 -2008</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Hyundai Phase - 2</p>
-                  <p className="smallheading">2007 -2008(7.5 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">Utility piping</p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-4">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2007 - 2015</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Blue Star</p>
-                  <p className="smallheading">2007 - 2015(2 Crores)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Trolyes, Mezzanine floor, EOT Cranes, Structural and
-                    Moveable main gate.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-5">
             <div className="aboutus2-container-1">
               <p className="year title-fade1-in">2009 - 2012</p>
             </div>
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
+                  <img src={appoloicon} className="scroll-img-logo" alt="logo"/>
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">Applo Tyres</p>
-                  <p className="smallheading">2009 - 2012(3 Crores)</p>
+                  <p className="smallheading">2009 - 2012 (3 Crores)</p>
                   <br />
                   <p className="aboutus2-text">
                     Mezzanine floors, Trolyes , Utility Piping.
@@ -365,22 +183,23 @@ const App = () => {
                 <img
                   className="aboutpic3 "
                   // title-fade-in
-                  src={aboutpic3}
+                  src={scrollapploimg}
                   alt="img"
                 />
               </div>
             </div>
           </div>
-          <div className="Aboutus2 title-fade-in-6">
+          <div className="Aboutus2 title-fade-in-2">
             <div className="aboutus2-container-1">
               <p className="year title-fade1-in">2009 - 2021</p>
             </div>
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
+                <img src={oerlikon} className="scroll-img-logo" alt="logo"/>
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">oerlikon balzers</p>
-                  <p className="smallheading">2009 - 2021(1 Crore)</p>
+                  <p className="smallheading">2009 - 2021 (1 Crore)</p>
                   <br />
                   <p className="aboutus2-text">
                     Office Partitions, Granite, Fall ceiling and Roofings.
@@ -391,49 +210,23 @@ const App = () => {
                 <img
                   className="aboutpic3 "
                   // title-fade-in
-                  src={aboutpic3}
+                  src={oerlikonscrollimg}
                   alt="img"
                 />
               </div>
             </div>
           </div>
-          <div className="Aboutus2 title-fade-in-7">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2014</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">EDAC</p>
-                  <p className="smallheading">2014(52 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Expansion project and piping work.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                {" "}
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-8">
+          <div className="Aboutus2 title-fade-in-3">
             <div className="aboutus2-container-1">
               <p className="year title-fade1-in">2015 - Tillnow...</p>
             </div>
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
+                <img src={Danfoss} className="scroll-img-logo" alt="logo"/>
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">DanFoss</p>
-                  <p className="smallheading">2015 - Tillnow...(5 Crores)</p>
+                  <p className="smallheading">2015 - Tillnow... (5 Crores)</p>
                   <br />
                   <p className="aboutus2-text">
                     Roofings, Floor carpets, Roof thermal markings, Rest rooms,
@@ -445,48 +238,23 @@ const App = () => {
                 <img
                   className="aboutpic3 "
                   // title-fade-in
-                  src={aboutpic3}
+                  src={Danfossscrollimg}
                   alt="img"
                 />
               </div>
             </div>
           </div>
-          <div className="Aboutus2 title-fade-in-9">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2017</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Tesa Tapes</p>
-                  <p className="smallheading">2017(22 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Partition work and Cold storage room.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-10">
+          <div className="Aboutus2 title-fade-in-4">
             <div className="aboutus2-container-1">
               <p className="year title-fade1-in">2017 - Tillnow...</p>
             </div>
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
+                <img src={seyon} className="scroll-img-logo" alt="logo"/>  
                   <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Seoyyn</p>
-                  <p className="smallheading">2017 - Tillnow...(2 Crores)</p>
+                  <p className="smallheading">Seoyon</p>
+                  <p className="smallheading">2017 - Tillnow... (2 Crores)</p>
                   <br />
                   <p className="aboutus2-text">
                     Security off room, Civil constructions, Epoxy flooring,
@@ -498,34 +266,7 @@ const App = () => {
                 <img
                   className="aboutpic3 "
                   // title-fade-in
-                  src={aboutpic3}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-11">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2020 - 2023</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">
-                    Seoyyn (World Trade Center Chennai)
-                  </p>
-                  <p className="smallheading">2020 - 2023(30 Lakhs)</p>
-                  <br />
-                  <p className="aboutus2-text">Canopy and Structural works</p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                {" "}
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={aboutpic3}
+                  src={seoyonscrollimg}
                   alt="img"
                 />
               </div>
@@ -539,57 +280,7 @@ const App = () => {
           <Aboutus1 />
         </section>
         <section className="panel gray">
-          {/* <div className="Aboutus3">
-                <div className="aboutus3-piccontainer">
-                  <img
-                    className="aboutpic4 about3-1fade-out-in"
-                    src={aboutpic4}
-                    alt="img"
-                  />
-                  <img
-                    className="aboutpic4 about3-2fade-out-in"
-                    src={aboutpic4}
-                    alt="img"
-                  />
-                </div>
-                <div className="aboutus-2-container">
-                  <div className="aboutpic4-heading-container ">
-                    <p className="aboutpic4-heading about3-1fade-in">
-                      Supporting
-                      <br />
-                      Jobs
-                    </p>
-                    <p className="aboutpic4-heading about3-2fade-in">
-                      Supporting
-                      <br />
-                      Jobs
-                    </p>
-                  </div>
-    
-                  <div className="aboutpic4-text">
-                    <div className="aboutpic4-text-container about3-1fade-out">
-                      <p className="aboutus3-text-heading">Safety Stickers</p>
-                      <br />
-                      <br />
-                      <p className="aboutus3-text">
-                        We started our journey in 2008, and we have come a long way
-                        from there. Here’s a glimpse of our many firsts, our biggest
-                        milestone, and our celebrations through the year.
-                      </p>
-                    </div>
-                    <div className="aboutpic4-text-container about3-2fade-out">
-                      <p className="aboutus3-text-heading">Safety Stickers</p>
-                      <br />
-                      <br />
-                      <p className="aboutus3-text">
-                        We started our journey in 2008, and we have come a long way
-                        from there. Here’s a glimpse of our many firsts, our biggest
-                        milestone, and our celebrations through the year.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+         <Aboutus3/>
         </section>
         <section
           className="panel black"
@@ -638,10 +329,10 @@ const App = () => {
               <div className="Contact-container">
                 <p className="contact-heading">Contact</p>
                 <br />
-                <p className="Contact">+91 94864 70801</p>
+                <a href="tel:+91 9486470801" className="Contact">+91 9486470801</a>
                 <p className="contact-heading"></p>
                 <br />
-                <p className="Contact">akash.rpaec@gmail.com</p>
+                <a href="mailto:akash.rpaec@gmail.com" class="Contact">akash.rpaec@gmail.com</a>
               </div>
             </div>
           </div>

@@ -26,8 +26,7 @@ function Footer() {
           <br />
           <br />
           <p className="footerlogo-text">
-            We started our journey in 2008, and we have come a long way from
-            there.
+          We are more than just a construction company; we are builders of dreams, architects of innovation, and stewards of quality.
           </p>
         </div>
         <div className="Footer-navbar">
@@ -58,10 +57,11 @@ function Footer() {
         </div>
         <div className="Contact-container">
             <p className="contact-heading">Contact</p><br/>
-            <p className="Contact">+91 94864 70801</p>
+            <a href="tel:+91 9486470801" className="Contact">+91 9486470801</a>
             <p className="contact-heading"></p><br/>
-            <p className="Contact">akash.rpaec@gmail.com</p>
-        </div>
+            <a href="mailto:akash.rpaec@gmail.com" class="Contact">akash.rpaec@gmail.com</a>
+
+        </div>  
       </div>
     </div>
   );

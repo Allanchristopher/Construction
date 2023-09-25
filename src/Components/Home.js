@@ -3,19 +3,29 @@ import "./Home.css";
 import logo from "../Assets/logo.svg";
 import { gsap } from "gsap";
 import moduleName from "../Assets/Right.svg";
-import Hoverimg from "../Assets/hoverimg.jpg";
+import Hoverimg1 from "../Assets/hoverimg1.jpg";
+import Hoverimg2 from "../Assets/hoverimg2.jpg";
+import Hoverimg3 from "../Assets/hoverimg3.jpg";
+import Hoverimg4 from "../Assets/hoverimg4.jpg";
 import aboutpic1 from "../Assets/aboutpic-1.svg";
 import userContext from "../Datacontexter";
 const Home = () => {
   const contexter = useContext(userContext);
-  const [rotatedText, setRotatedText] = useState(Hoverimg);
+  const [rotatedText, setRotatedText] = useState(Hoverimg1);
   const [image, setImage] = useState();
   const [imageno, setImageno] = useState();
   useEffect(() => {
     if (imageno === "1") {
-      setImage(Hoverimg);
-    } else if (imageno === "2") {
-      setImage(aboutpic1);
+      setImage(Hoverimg1);
+    } 
+    else if (imageno === "2") {
+      setImage(Hoverimg2);
+    }
+    else if (imageno === "3") {
+      setImage(Hoverimg3);
+    }
+    else if (imageno === "4") {
+      setImage(Hoverimg4);
     }
   }, [imageno]);
 
@@ -77,8 +87,12 @@ const Home = () => {
         <img className="logo" src={logo} alt="Logo" />
       </div>
       <div className="Home-center">
-        <p className="Home-center-AAKAASH">AAKAASH ENGINEERING</p>
-        <p className="Home-center-BIG">
+        <p className="Home-center-AAKAASH" onMouseEnter={() => {
+              contexter.setIsHovered(true);
+              setImageno("4");
+            }}
+            onMouseLeave={() => contexter.setIsHovered(false)}>AAKAASH ENGINEERING</p>
+        <p className="Home-center-BIG" >
           <span
             onMouseEnter={() => {
               contexter.setIsHovered(true);
@@ -97,7 +111,16 @@ const Home = () => {
           >
             Performance{" "}
           </span>
-          Speaks
+          <span 
+           onMouseEnter={() => {
+            contexter.setIsHovered(true);
+            setImageno("3");
+          }}
+          onMouseLeave={() => contexter.setIsHovered(false)}
+          >
+             Speaks
+          </span>
+         
         </p>
       </div>
       <div className="circle-container">

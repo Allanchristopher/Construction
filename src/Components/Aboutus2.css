@@ -48,6 +48,10 @@
   text-align: left;
   padding-bottom: 50px;
 }
+.scroll-img-logo{
+  width: 120px;
+  padding-bottom: 40px;
+}
 .smallheading {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;

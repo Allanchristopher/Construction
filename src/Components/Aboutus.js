@@ -36,15 +36,11 @@ function Aboutus() {
           </div>
         </div>
         <div className="about-text">
-          <p className="about-heading">
-            <span>A</span>
-            <span>b</span>
-            <span>o</span>
-            <span>u</span>
-            <span>t</span> <br />
+          <p className="about-heading" data-aos="fade-right">
+            About <br />
             Us
           </p>
-          <p className="about-text-content">
+          <p className="about-text-content" >
             We started our journey in 2008, and we have come a long way from
             there. Here’s a glimpse of our many firsts, our biggest milestone,
             and our celebrations through the year of industrial solutions-about
