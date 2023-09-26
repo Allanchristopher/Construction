@@ -46,37 +46,37 @@ const App = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []); 
-  // useEffect(() =>{
-  //   const intersectionCallback = (entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.target.classList.contains("black")) {
-  //         if (entry.isIntersecting) {
-  //           setBackgroundColor("black");
-  //         } else {
-  //           setBackgroundColor("");
-  //         }
-  //       } else if (entry.target.classList.contains("gray")) {
-  //         if (entry.isIntersecting) {
-  //           setBackgroundColor("f5f1ee");
-  //         } else {
-  //           setBackgroundColor("");
-  //         }
-  //       } else if (entry.target.classList.contains("contactus-section")) {
-  //         if (entry.isIntersecting) {
-  //           setBackgroundColor("black");
-  //         } else {
-  //           setBackgroundColor("");
-  //         }
-  //       }
-  //     });
-  //   };
-  //   const observer = new IntersectionObserver(intersectionCallback, {
-  //     root: null,
-  //     threshold: 0.5,
-  //   });
-  //   observer.observe(sectionsRef.current[3]);
-  //   observer.observe(sectionsRef.current[4]);
-  // },[])
+  useEffect(() =>{
+    const intersectionCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target.classList.contains("black")) {
+          if (entry.isIntersecting) {
+            setBackgroundColor("black");
+          } else {
+            setBackgroundColor("");
+          }
+        } else if (entry.target.classList.contains("gray")) {
+          if (entry.isIntersecting) {
+            setBackgroundColor("f5f1ee");
+          } else {
+            setBackgroundColor("");
+          }
+        } else if (entry.target.classList.contains("contactus-section")) {
+          if (entry.isIntersecting) {
+            setBackgroundColor("black");
+          } else {
+            setBackgroundColor("");
+          }
+        }
+      });
+    };
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: null,
+      threshold: 0.5,
+    });
+    observer.observe(sectionsRef.current[3]);
+    observer.observe(sectionsRef.current[4]);
+  },[])
   useEffect(() => {
     console.clear();
     
@@ -176,122 +176,6 @@ const App = () => {
     </section>
     <section className="section-1">
           <Aboutus />
-        </section>
-        <section className="section-2" data-pin="true">
-          <div className="Aboutus2 title-fade-in-1">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2009 - 2012</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <img
-                    src={appoloicon}
-                    className="scroll-img-logo"
-                    alt="logo"
-                  />
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Applo Tyres</p>
-                  <p className="smallheading">2009 - 2012 (3 Crores)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Mezzanine floors, Trolyes , Utility Piping.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={scrollapploimg}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-2">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2009 - 2021</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <img src={oerlikon} className="scroll-img-logo" alt="logo" />
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">oerlikon balzers</p>
-                  <p className="smallheading">2009 - 2021 (1 Crore)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Office Partitions, Granite, Fall ceiling and Roofings.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={oerlikonscrollimg}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-3">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2015 - Tillnow...</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <img src={Danfoss} className="scroll-img-logo" alt="logo" />
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">DanFoss</p>
-                  <p className="smallheading">2015 - Tillnow... (5 Crores)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Roofings, Floor carpets, Roof thermal markings, Rest rooms,
-                    Solo meeting rooms.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={Danfossscrollimg}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="Aboutus2 title-fade-in-4">
-            <div className="aboutus2-container-1">
-              <p className="year title-fade1-in">2017 - Tillnow...</p>
-            </div>
-            <div className="aboutus2-container-2">
-              <div className="aboutus2-container-2-container">
-                <div className="aboutus2-textcontainer">
-                  <img src={seyon} className="scroll-img-logo" alt="logo" />
-                  <p className="smallheading ">Our Projects</p>
-                  <p className="smallheading">Seoyon</p>
-                  <p className="smallheading">2017 - Tillnow... (2 Crores)</p>
-                  <br />
-                  <p className="aboutus2-text">
-                    Security off room, Civil constructions, Epoxy flooring,
-                    Store room and Movable main gate.
-                  </p>
-                </div>
-              </div>
-              <div className="aboutus-2-img-container">
-                <img
-                  className="aboutpic3 "
-                  // title-fade-in
-                  src={seoyonscrollimg}
-                  alt="img"
-                />
-              </div>
-            </div>
-          </div>
         </section>
      
       </div>

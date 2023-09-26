@@ -103,7 +103,7 @@ body {
   height: 100vh;
   background: yellow;
 } */
-.section-0{
+/* .section-0{
   position: relative;
 }
 .section-1{
@@ -114,7 +114,7 @@ position: relative;
 }
 .section-3{
   position: relative;
-}
+} */
 .lastContainer {
   display: flex;
   height: 100vh;
