@@ -169,7 +169,7 @@ const App = () => {
       setIsHoveredDrag,
     }}
   >
-    {windowWidth < 1000 ? (
+    {/* {windowWidth < 1000 ? (
       <div className="mob-container">
         <section className="Nav-home section-0">
       <Home />
@@ -177,10 +177,12 @@ const App = () => {
     <section className="section-1">
           <Aboutus />
         </section>
-     
+     <section className="section-2">
+
+     </section>
       </div>
       
-    ) : (
+    ) : ( */}
      <div
       className="container noise"
       style={{ backgroundColor: backgroundColor }}
@@ -363,7 +365,7 @@ const App = () => {
         <Courser />
     
     </div>
-    )}
+    {/* )} */}
     </userContext.Provider>
     </div>
   

@@ -9,6 +9,9 @@
   scroll-behavior: smooth;
   /* background: #ffffff; */
 }
+::-webkit-scrollbar {
+  display: none;
+}
 /* .App {
 text-align: center;
 overflow: hidden;
