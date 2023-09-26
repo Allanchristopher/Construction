@@ -133,7 +133,7 @@
 overflow-y: scroll;
   } */
   .Contactus {
-    padding: 50px 40px 0px 40px;
+    padding: 50px 20px 0px 20px;
   }
   .contactus-container {
     width: 100%;
@@ -156,7 +156,6 @@ overflow-y: scroll;
     font-weight: 600;
     color: #ffffff;
     text-align: right;
-    mix-blend-mode:color-burn;
   }
 }
 @media (max-width: 725px) {

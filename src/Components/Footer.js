@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import footerlogo from "../Assets/footerlogo.svg";
-import { gsap } from "gsap";
 function Footer() {
   const handleScrollToHome = () => {
     window.scrollTo({
@@ -26,15 +25,20 @@ function Footer() {
           <br />
           <br />
           <p className="footerlogo-text">
-          We are more than just a construction company; we are builders of dreams, architects of innovation, and stewards of quality.
+            We are more than just a construction company; we are builders of
+            dreams, architects of innovation, and stewards of quality.
           </p>
         </div>
         <div className="Footer-navbar">
           <p className="footer-navbar-heading">Pages</p>
           <br />
-          <p className="footer-navbar" onClick={handleScrollToHome}>Home</p>
+          <p className="footer-navbar" onClick={handleScrollToHome}>
+            Home
+          </p>
           <br />
-          <p className="footer-navbar" onClick={handleScrollToAboutUs}>About Us</p>
+          <p className="footer-navbar" onClick={handleScrollToAboutUs}>
+            About Us
+          </p>
           <br />
           <p className="footer-navbar">Our Clients</p>
           <br />
@@ -56,12 +60,17 @@ function Footer() {
           </p>
         </div>
         <div className="Contact-container">
-            <p className="contact-heading">Contact</p><br/>
-            <a href="tel:+91 9486470801" className="Contact">+91 9486470801</a>
-            <p className="contact-heading"></p><br/>
-            <a href="mailto:akash.rpaec@gmail.com" class="Contact">akash.rpaec@gmail.com</a>
-
-        </div>  
+          <p className="contact-heading">Contact</p>
+          <br />
+          <a href="tel:+91 9486470801" className="Contact">
+            +91 9486470801
+          </a>
+          <p className="contact-heading"></p>
+          <br />
+          <a href="mailto:akash.rpaec@gmail.com" class="Contact">
+            akash.rpaec@gmail.com
+          </a>
+        </div>
       </div>
     </div>
   );

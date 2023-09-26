@@ -1,7 +1,7 @@
 .Home {
   background-color: #f5f1ee;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 0.3fr 1fr 0.3fr;
   padding: 50px 80px;
@@ -132,7 +132,7 @@
 
 @media(max-width:1000px){
   .Home {
-    padding: 50px 40px;
+    padding: 50px 20px;
   
   }
   .Home-center-BIG {

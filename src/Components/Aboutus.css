@@ -1,7 +1,7 @@
 .Aboutus {
   background-color: transparent;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1.8fr 1fr;
   padding: 0px 80px;
@@ -11,7 +11,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-rows: 0.7fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
 }
 .about-1-img {
   width: 100%;
@@ -24,12 +24,13 @@
   height: 100%;
 }
 .about-pic-1 {
-  width: 415px;
-  height: 328px;
+ width: 100%;
+ height: 100%;
 }
 .aboutpic1 {
-  width: 415px;
-  height: 328px;
+  width: 70%;
+  height: 100%;
+  object-fit:cover;
 }
 
 .about-text {
@@ -38,6 +39,8 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-bottom: 50px;
   gap: 30px;
 }
 .about-heading {
@@ -184,12 +187,13 @@
 }
 @media (max-width: 1000px) {
   .Aboutus {
+    height: auto;
     grid-template-columns: 1fr;
-    padding: 0px;
-    overflow: scroll;
+    padding: 20px;
+
   }
   .about-text{
-    padding: 0px 40px;
+    padding: 50px 20px;
   }
   .Aboutus {
     gap: 40px;
@@ -266,7 +270,7 @@
     object-fit: cover;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 360px) {
   .about-heading {
     font-size: 36px;
   }

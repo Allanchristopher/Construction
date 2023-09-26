@@ -100,7 +100,7 @@ const Home = () => {
             }}
             onMouseLeave={() => contexter.setIsHovered(false)}
           >
-            Where{" "}
+            Where {""}
           </span>
           <span
             onMouseEnter={() => {
@@ -109,8 +109,9 @@ const Home = () => {
             }}
             onMouseLeave={() => contexter.setIsHovered(false)}
           >
-            Performance{" "}
+            Performance
           </span>
+          <br/>
           <span 
            onMouseEnter={() => {
             contexter.setIsHovered(true);

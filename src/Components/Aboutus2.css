@@ -81,10 +81,10 @@
   .Aboutus2 {
     background-color: transparent;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
-    grid-template-rows: 0.6fr 1fr;
-    padding: 50px 40px 0px 40px;
+    grid-template-rows: 0.3fr 1fr;
+    padding: 0px 20px 0px 20px;
     position: absolute;
   }
   .aboutus2-container-1{

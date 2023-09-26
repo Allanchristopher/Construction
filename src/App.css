@@ -91,7 +91,10 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-
+.mob-container{
+  width:100%;
+  height: auto;
+}
 /* .firstContainer {
   display: flex;
   flex-direction: column;
@@ -100,7 +103,18 @@ body {
   height: 100vh;
   background: yellow;
 } */
-
+.section-0{
+  position: relative;
+}
+.section-1{
+position: relative;
+}
+.section-2{
+position: relative;
+}
+.section-3{
+  position: relative;
+}
 .lastContainer {
   display: flex;
   height: 100vh;

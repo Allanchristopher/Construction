@@ -5,6 +5,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   padding: 0px 80px;
+  position: relative;
 }
 .aboutus-container-1 {
   width: 100%;
@@ -111,28 +112,12 @@
   height: 90%;
   object-fit: cover;
 }
-.aboutus-container-1-mobile-view {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  position: absolute;
-  z-index: -9999999;
-}
 @media (max-width: 1000px) {
   .Aboutus1 {
-    padding: 0px 40px;
+    padding: 0px 20px;
     align-items: center;
     justify-content: center;
-    grid-template-rows: 1fr;
-  }
-  .aboutus-container-1 {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    position: absolute;
-    z-index: -99;
+    grid-template-rows: 0.5fr 1fr;
   }
   .aboutus-container-2 {
     width: 100%;
@@ -142,16 +127,6 @@
     justify-content: space-evenly;
     gap: 40px;
     grid-template-columns: 1fr ;
-  }
-  .aboutus-container-1-mobile-view {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    visibility: visible;
-    position: relative;
-    align-items: center;
-    overflow-x: scroll;
-    gap: 100px;
   }
   .ourclients-text {
     text-align: right;

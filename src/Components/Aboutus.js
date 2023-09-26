@@ -29,25 +29,26 @@ function Aboutus() {
                   </div>
                 </div>
               </div>
-            </div>{" "}
+            </div>
           </div>
           <div className="about-pic-1">
             <img className="aboutpic1" src={aboutpic1} alt="img" />
           </div>
         </div>
+
         <div className="about-text">
-          <p className="about-heading" data-aos="fade-right">
+          <p className="about-heading">
             About <br />
             Us
           </p>
-          <p className="about-text-content" >
+          <p className="about-text-content">
             We started our journey in 2008, and we have come a long way from
             there. Here’s a glimpse of our many firsts, our biggest milestone,
             and our celebrations through the year of industrial solutions-about
             all kind of segments from hr, production,-safety, pantry in-house,
             logistic, testing labs,stp/etp, utilities, landscape, roofing and
-            flooring supply AND services,fire hydrant, Windows
-            and glazing works etc.
+            flooring supply AND services,fire hydrant, Windows and glazing works
+            etc.
           </p>
         </div>
       </div>

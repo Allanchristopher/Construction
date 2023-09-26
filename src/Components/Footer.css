@@ -7,10 +7,6 @@
   padding: 50px 80px;
   overflow-x: hidden;
 }
-.Footer-top {
-  display: flex;
-  justify-content: space-between;
-}
 .Footer-logo {
   text-align: left;
   align-items: flex-start;
@@ -31,6 +27,10 @@
 }
 .Footer-navbar {
   width: 250px;
+}
+.Footer-top {
+  display: flex;
+  justify-content: space-between;
 }
 .footer-navbar-heading {
   font-family: "Montserrat", sans-serif;
@@ -96,6 +96,17 @@
   color: #666666;
 }
 @media (max-width: 1000px) {
+  .Footer {
+    background-color: #f5f1ee;
+    width: 100vw;
+  height: auto;
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+    padding: 50px 20px;
+    overflow-x: scroll;
+  }
   .Footer-top {
     display: flex;
     flex-direction: column;

@@ -31,38 +31,55 @@ const App = () => {
   const [isHoveredDrag, setIsHoveredDrag] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState("");
   const sectionsRef = useRef([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    // Update window width when the window is resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
+    // Attach the event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); 
+  // useEffect(() =>{
+  //   const intersectionCallback = (entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.target.classList.contains("black")) {
+  //         if (entry.isIntersecting) {
+  //           setBackgroundColor("black");
+  //         } else {
+  //           setBackgroundColor("");
+  //         }
+  //       } else if (entry.target.classList.contains("gray")) {
+  //         if (entry.isIntersecting) {
+  //           setBackgroundColor("f5f1ee");
+  //         } else {
+  //           setBackgroundColor("");
+  //         }
+  //       } else if (entry.target.classList.contains("contactus-section")) {
+  //         if (entry.isIntersecting) {
+  //           setBackgroundColor("black");
+  //         } else {
+  //           setBackgroundColor("");
+  //         }
+  //       }
+  //     });
+  //   };
+  //   const observer = new IntersectionObserver(intersectionCallback, {
+  //     root: null,
+  //     threshold: 0.5,
+  //   });
+  //   observer.observe(sectionsRef.current[3]);
+  //   observer.observe(sectionsRef.current[4]);
+  // },[])
   useEffect(() => {
     console.clear();
-    const intersectionCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.classList.contains("black")) {
-          if (entry.isIntersecting) {
-            setBackgroundColor("black");
-          } else {
-            setBackgroundColor("");
-          }
-        } else if (entry.target.classList.contains("gray")) {
-          if (entry.isIntersecting) {
-            setBackgroundColor("f5f1ee");
-          } else {
-            setBackgroundColor("");
-          }
-        } else if (entry.target.classList.contains("contactus-section")) {
-          if (entry.isIntersecting) {
-            setBackgroundColor("black");
-          } else {
-            setBackgroundColor("");
-          }
-        }
-      });
-    };
-    const observer = new IntersectionObserver(intersectionCallback, {
-      root: null,
-      threshold: 0.5,
-    });
-    observer.observe(sectionsRef.current[3]);
-    observer.observe(sectionsRef.current[4]);
+    
     const sections = gsap.utils.toArray(".panel");
     const stops = [];
     sections.forEach((section, index) => {
@@ -127,13 +144,13 @@ const App = () => {
           { opacity: 0, y: 0 },
           { opacity: 1, y: 0, ease: "power2.out" },
           0.5
-        )
-        // .staggerTo(
-        //   q(".title-fade-in-4"),
-        //   0.5,
-        //   { opacity: 0, y: 0, ease: "power2.out" },
-        //   0.5
-        // );
+        );
+      // .staggerTo(
+      //   q(".title-fade-in-4"),
+      //   0.5,
+      //   { opacity: 0, y: 0, ease: "power2.out" },
+      //   0.5
+      // );
       if (index === stops.length - 1) {
         tl.to(sections, {
           xPercent: -(100 * (sections.length - 1)),
@@ -143,25 +160,24 @@ const App = () => {
     });
   }, []);
   return (
-    <div
-      className="container noise"
-      style={{ backgroundColor: backgroundColor }}
-    >
-      <userContext.Provider
-        value={{
-          isHovered,
-          setIsHovered,
-          isHoveredDrag,
-          setIsHoveredDrag,
-        }}
-      >
-        <section className="panel Nav-home">
-          <Home />
-        </section>
-        <section className="panel">
+    <div>  
+    <userContext.Provider
+    value={{
+      isHovered,
+      setIsHovered,
+      isHoveredDrag,
+      setIsHoveredDrag,
+    }}
+  >
+    {windowWidth < 1000 ? (
+      <div className="mob-container">
+        <section className="Nav-home section-0">
+      <Home />
+    </section>
+    <section className="section-1">
           <Aboutus />
         </section>
-        <section className="panel purple" data-pin="true">
+        <section className="section-2" data-pin="true">
           <div className="Aboutus2 title-fade-in-1">
             <div className="aboutus2-container-1">
               <p className="year title-fade1-in">2009 - 2012</p>
@@ -169,7 +185,11 @@ const App = () => {
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
-                  <img src={appoloicon} className="scroll-img-logo" alt="logo"/>
+                  <img
+                    src={appoloicon}
+                    className="scroll-img-logo"
+                    alt="logo"
+                  />
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">Applo Tyres</p>
                   <p className="smallheading">2009 - 2012 (3 Crores)</p>
@@ -196,7 +216,7 @@ const App = () => {
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
-                <img src={oerlikon} className="scroll-img-logo" alt="logo"/>
+                  <img src={oerlikon} className="scroll-img-logo" alt="logo" />
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">oerlikon balzers</p>
                   <p className="smallheading">2009 - 2021 (1 Crore)</p>
@@ -223,7 +243,7 @@ const App = () => {
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
-                <img src={Danfoss} className="scroll-img-logo" alt="logo"/>
+                  <img src={Danfoss} className="scroll-img-logo" alt="logo" />
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">DanFoss</p>
                   <p className="smallheading">2015 - Tillnow... (5 Crores)</p>
@@ -251,7 +271,138 @@ const App = () => {
             <div className="aboutus2-container-2">
               <div className="aboutus2-container-2-container">
                 <div className="aboutus2-textcontainer">
-                <img src={seyon} className="scroll-img-logo" alt="logo"/>  
+                  <img src={seyon} className="scroll-img-logo" alt="logo" />
+                  <p className="smallheading ">Our Projects</p>
+                  <p className="smallheading">Seoyon</p>
+                  <p className="smallheading">2017 - Tillnow... (2 Crores)</p>
+                  <br />
+                  <p className="aboutus2-text">
+                    Security off room, Civil constructions, Epoxy flooring,
+                    Store room and Movable main gate.
+                  </p>
+                </div>
+              </div>
+              <div className="aboutus-2-img-container">
+                <img
+                  className="aboutpic3 "
+                  // title-fade-in
+                  src={seoyonscrollimg}
+                  alt="img"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+     
+      </div>
+      
+    ) : (
+     <div
+      className="container noise"
+      style={{ backgroundColor: backgroundColor }}
+    >
+     
+        <section className="panel Nav-home">
+          <Home />
+        </section>
+        <section className="panel">
+          <Aboutus />
+        </section>
+        <section className="panel purple" data-pin="true">
+          <div className="Aboutus2 title-fade-in-1">
+            <div className="aboutus2-container-1">
+              <p className="year title-fade1-in">2009 - 2012</p>
+            </div>
+            <div className="aboutus2-container-2">
+              <div className="aboutus2-container-2-container">
+                <div className="aboutus2-textcontainer">
+                  <img
+                    src={appoloicon}
+                    className="scroll-img-logo"
+                    alt="logo"
+                  />
+                  <p className="smallheading ">Our Projects</p>
+                  <p className="smallheading">Applo Tyres</p>
+                  <p className="smallheading">2009 - 2012 (3 Crores)</p>
+                  <br />
+                  <p className="aboutus2-text">
+                    Mezzanine floors, Trolyes , Utility Piping.
+                  </p>
+                </div>
+              </div>
+              <div className="aboutus-2-img-container">
+                <img
+                  className="aboutpic3 "
+                  // title-fade-in
+                  src={scrollapploimg}
+                  alt="img"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="Aboutus2 title-fade-in-2">
+            <div className="aboutus2-container-1">
+              <p className="year title-fade1-in">2009 - 2021</p>
+            </div>
+            <div className="aboutus2-container-2">
+              <div className="aboutus2-container-2-container">
+                <div className="aboutus2-textcontainer">
+                  <img src={oerlikon} className="scroll-img-logo" alt="logo" />
+                  <p className="smallheading ">Our Projects</p>
+                  <p className="smallheading">oerlikon balzers</p>
+                  <p className="smallheading">2009 - 2021 (1 Crore)</p>
+                  <br />
+                  <p className="aboutus2-text">
+                    Office Partitions, Granite, Fall ceiling and Roofings.
+                  </p>
+                </div>
+              </div>
+              <div className="aboutus-2-img-container">
+                <img
+                  className="aboutpic3 "
+                  // title-fade-in
+                  src={oerlikonscrollimg}
+                  alt="img"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="Aboutus2 title-fade-in-3">
+            <div className="aboutus2-container-1">
+              <p className="year title-fade1-in">2015 - Tillnow...</p>
+            </div>
+            <div className="aboutus2-container-2">
+              <div className="aboutus2-container-2-container">
+                <div className="aboutus2-textcontainer">
+                  <img src={Danfoss} className="scroll-img-logo" alt="logo" />
+                  <p className="smallheading ">Our Projects</p>
+                  <p className="smallheading">DanFoss</p>
+                  <p className="smallheading">2015 - Tillnow... (5 Crores)</p>
+                  <br />
+                  <p className="aboutus2-text">
+                    Roofings, Floor carpets, Roof thermal markings, Rest rooms,
+                    Solo meeting rooms.
+                  </p>
+                </div>
+              </div>
+              <div className="aboutus-2-img-container">
+                <img
+                  className="aboutpic3 "
+                  // title-fade-in
+                  src={Danfossscrollimg}
+                  alt="img"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="Aboutus2 title-fade-in-4">
+            <div className="aboutus2-container-1">
+              <p className="year title-fade1-in">2017 - Tillnow...</p>
+            </div>
+            <div className="aboutus2-container-2">
+              <div className="aboutus2-container-2-container">
+                <div className="aboutus2-textcontainer">
+                  <img src={seyon} className="scroll-img-logo" alt="logo" />
                   <p className="smallheading ">Our Projects</p>
                   <p className="smallheading">Seoyon</p>
                   <p className="smallheading">2017 - Tillnow... (2 Crores)</p>
@@ -280,7 +431,7 @@ const App = () => {
           <Aboutus1 />
         </section>
         <section className="panel gray">
-         <Aboutus3/>
+          <Aboutus3 />
         </section>
         <section
           className="panel black"
@@ -293,28 +444,12 @@ const App = () => {
             <div className="Footer-top">
               <div className="Footer-logo">
                 <img className="footerlogo" src={footerlogo} alt="img" />
-                <br />
-                <br />
-                <p className="footerlogo-text">
-                  We started our journey in 2008, and we have come a long way
-                  from there.
-                </p>
               </div>
               <div className="Footer-navbar">
-                <p className="footer-navbar-heading">Pages</p>
-                <br />
-                <p className="footer-navbar">Home</p>
-                <br />
-                <p className="footer-navbar">About Us</p>
-                <br />
-                <p className="footer-navbar">Our Clients</p>
-                <br />
-                <p className="footer-navbar">Our Journey</p>
-                <br />
-                <p className="footer-navbar">Supporting Jobs</p>
-                <br />
-                <p className="footer-navbar">Contact Us</p>
-                <br />
+                 <p className="footerlogo-text">
+                  We are more than just a construction company; we are builders
+                  of dreams, architects of innovation, and stewards of quality.
+                </p>
               </div>
             </div>
             <div className="Footer-bottom">
@@ -329,17 +464,27 @@ const App = () => {
               <div className="Contact-container">
                 <p className="contact-heading">Contact</p>
                 <br />
-                <a href="tel:+91 9486470801" className="Contact">+91 9486470801</a>
+                <a href="tel:+91 9486470801" className="Contact">
+                  +91 9486470801
+                </a>
                 <p className="contact-heading"></p>
                 <br />
-                <a href="mailto:akash.rpaec@gmail.com" class="Contact">akash.rpaec@gmail.com</a>
+                <a href="mailto:akash.rpaec@gmail.com" class="Contact">
+                  akash.rpaec@gmail.com
+                </a>
               </div>
             </div>
           </div>
         </section>
         <Courser />
-      </userContext.Provider>
+    
     </div>
+    )}
+    </userContext.Provider>
+    </div>
+  
+  
+
   );
 };
 
